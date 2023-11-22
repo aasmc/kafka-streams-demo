@@ -15,7 +15,15 @@ docker compose exec -i kafka /bin/kafka-console-producer --broker-list kafka:290
 ```
 4. После старта консольного продъюсера сделать несколько записей usernames в терминале,
    если в течение 1 минуты будет более трех одинаковых usernames, то тогда такой username попадет в 
-   топик AnomalousUsers
+   топик AnomalousUsers. После ввода username необходимо нажать ENTER. 
+```text
+alice<ENTER>
+alice<ENTER>
+bob<ENTER>
+bob<ENTER>
+alice<ENTER>
+charlie<ENTER>
+```
 5. Чтобы прочитать содержимое топика AnomalousUsers, выполните следующую команду:
 ```shell
 docker compose exec -i kafka /bin/kafka-console-consumer --topic AnomalousUsers --from-beginning \
